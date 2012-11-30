@@ -1,5 +1,7 @@
 Project: Open Classrooms @ UC Berkeley
+
 Website: ucopenclass.herokuapps.com
+
 Description: A web app to designed to find open classrooms at UC Berkeley. Uses schedule.berkeley.edu to as source.
 
 Problem:
@@ -10,4 +12,5 @@ Attempts:
 -Use SQLAlchemy
 
 Author: Harrison Tsai
+
 Collaborators: Anthony Sutardja, Ryan Higgins
