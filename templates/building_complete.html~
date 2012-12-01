@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block div %}
+			<div id="main">
+			{% if room == 'ALL' %}
+				<h3>Open classrooms at {{ building }} at {{ time }} on {{ date }}</h3>
+			{% else %}
+				<h3>Open classrooms at {{ room }} {{ building }} at {{ time }} on {{ date }}</h3>
+			{% endif %}
+				<div id="list">
+				{% if room_selected %}
+					{% if rooms %}
+					<p>Room {{ room }} is open!</p>
+					{% else %}
+					<p>Room {{ room }} is occupied!</p>
+					{% endif %}
+				{% else %}
+					{% if rooms %}
+					<!-- left column -->
+					<div id="left">
+						<ol>
+						{% for room in rooms %}
+							{% if loop.length % 2 == 0 %}
+								{% if loop.index <= loop.length // 2 %}
+								<li>Room {{ room }}</li>
+								{% endif %}
+							{% else %}
+								{% if loop.index0 <= loop.length // 2 %}
+								<li>Room {{ room }}</li>
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+						</ol>
+					</div>
+					<!-- right column -->
+					<div id="right">
+						<ol>
+						{% for room in rooms %}
+							{% if loop.length % 2 == 0 %}
+								{% if loop.index > loop.length // 2 %}
+								<li>Room {{ room }}</li>
+								{% endif %}
+							{% else %}
+								{% if loop.index0 > loop.length // 2 %}
+								<li>Room {{ room }}</li>
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+						</ol>
+					</div>
+					{% else %}
+					<p>All rooms are occupied! Please select another building.</p>
+					{% endif %}
+				{% endif %}
+				</div>
+				<p id="goback"><a href="/{{ building }}">Go back</a></p>
+			</div>
+{% endblock %}

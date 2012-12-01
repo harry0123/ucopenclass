@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+{% block div %}
+			<div id="main">
+				<form action="" enctype="multipart/form-data" method="post">
+					<div id="accordion">
+					
+						<!-- Building -->
+						<h3><a href="#">  Building</a></h3>
+						<div id="building">
+							<p>{{ building }}</p>
+							<input type="hidden" name="building" value="{{ building }}">
+						</div>
+					
+						<!-- Room -->
+						<h3><a href="#">  Room</a></h3>
+						<div id="room">
+							<select name="room">
+								<option value="ALL">ALL</option>
+								{% for room in rooms %}
+								<option value="{{ room }}">{{ room }}</option>
+								{% endfor %}
+							</select>
+						</div>
+					
+						<!-- Time -->
+						<h3><a href="#">  Time</a></h3>
+						<div id="time">
+							<select name="time">
+								<option value="NOW">NOW</option>
+								<option value="700">7:00AM</option>
+								<option value="715">7:15AM</option>
+								<option value="730">7:30AM</option>
+								<option value="745">7:45AM</option>
+								<option value="800">8:00AM</option>
+								<option value="815">8:15AM</option>
+								<option value="830">8:30AM</option>
+								<option value="845">8:45AM</option>
+								<option value="900">9:00AM</option>
+								<option value="915">9:15AM</option>
+								<option value="930">9:30AM</option>
+								<option value="945">9:45AM</option>
+								<option value="1000">10:00AM</option>
+								<option value="1015">10:15AM</option>
+								<option value="1030">10:30AM</option>
+								<option value="1045">10:45AM</option>
+								<option value="1100">11:00AM</option>
+								<option value="1115">11:15AM</option>
+								<option value="1130">11:30AM</option>
+								<option value="1145">11:45AM</option>
+								<option value="1200">12:00PM</option>
+								<option value="1215">12:15PM</option>
+								<option value="1230">12:30PM</option>
+								<option value="1245">12:45PM</option>
+								<option value="1300">1:00PM</option>
+								<option value="1315">1:15PM</option>
+								<option value="1330">1:30PM</option>
+								<option value="1345">1:45PM</option>
+								<option value="1400">2:00PM</option>
+								<option value="1415">2:15PM</option>
+								<option value="1430">2:30PM</option>
+								<option value="1445">2:45PM</option>
+								<option value="1500">3:00PM</option>
+								<option value="1515">3:15PM</option>
+								<option value="1530">3:30PM</option>
+								<option value="1545">3:45PM</option>
+								<option value="1600">4:00PM</option>
+								<option value="1615">4:15PM</option>
+								<option value="1630">4:30PM</option>
+								<option value="1645">4:45PM</option>
+								<option value="1700">5:00PM</option>
+								<option value="1715">5:15PM</option>
+								<option value="1730">5:30PM</option>
+								<option value="1745">5:45PM</option>
+								<option value="1800">6:00PM</option>
+								<option value="1815">6:15PM</option>
+								<option value="1830">6:30PM</option>
+								<option value="1845">6:45PM</option>
+								<option value="1900">7:00PM</option>
+								<option value="1915">7:15PM</option>
+								<option value="1930">7:30PM</option>
+								<option value="1945">7:45PM</option>
+								<option value="2000">8:00PM</option>
+								<option value="2015">8:15PM</option>
+								<option value="2030">8:30PM</option>
+								<option value="2045">8:45PM</option>
+								<option value="2100">9:00PM</option>
+								<option value="2115">9:15PM</option>
+								<option value="2130">9:30PM</option>
+								<option value="2145">9:45PM</option>
+								<option value="2200">10:00PM</option>
+								<option value="2215">10:15PM</option>
+								<option value="2230">10:30PM</option>
+								<option value="2245">10:45PM</option>
+							</select>
+						</div>
+					
+						<!-- Day -->
+						<h3><a href="#">  Day</a></h3>
+						<div id="calendar">
+							<input id="datepicker" type="text" name="datepicker" value="TODAY">
+						</div>
+					</div>
+					<input type="submit" value="GO!">
+				</form>
+				<p><a href="{{ url_for('index') }}">Go Back</a></p>
+			</div>
+{% endblock %}

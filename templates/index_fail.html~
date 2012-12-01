@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="description" content="t.co unwrapper unwraps t.co links"/>
+		<meta name="organization" content="Beyond Consultancy"/>
+		<meta name="copyright" content="&copy;2012 Beyond International">
+
+		<title>t.co Link Unwrapper</title>
+		<!-- CSS -->
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+		<!-- Google Font-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header">
+				<img src="{{ url_for('static', filename='beyond-logo3.png') }}" class="logo" alt="Beyond: Rethinking Digital">
+			</div>
+
+			<div id="main">
+				<p>Enter a .csv file</p>
+				<p>Radian6 or one column .csv file</p>
+				<form action="" enctype="multipart/form-data" method="post">
+					<input type="file" name="csv_file"/>
+					<input type="submit" value="create csv!">
+				</form>
+			</div>
+            
+            <div class="push"></div>
+
+		</div>
+        
+        <div id="footer">
+            <p>&copy;2012 Beyond International</p>
+		</div>
+
+	</body>
+
+</html>

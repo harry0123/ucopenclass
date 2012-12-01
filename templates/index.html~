@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block div %}
+			<div id="main">
+				<!-- search box -->
+				<h3 id="searchheader">Search for a building to find an open classroom</h3>
+				<div id="search">
+					<form action="" enctype="multipart/form-data" method="post">
+						<input class=buildings type="text" name="building" list="building_datalist"/>
+						<datalist id="building_datalist">
+						{% for building in buildings %}
+							<option value="{{ building.full|safe }}">{{ building.full|safe }}</option>
+							<option value="{{ building.abbr|safe }}">{{ building.abbr|safe }}</option>
+						{% endfor %}
+						</datalist>
+						{% if success != True %}
+						<p class="error">Please enter a correct building (select from the datalist when typing)</p>
+						{% endif %}
+						<input type="submit" value="submit">
+					</form>
+				</div>
+				<!-- List -->
+				<h3>or select a building to find an open classroom</h3>
+				<div id="list">
+					<form action="" enctype="multipart/form-data" method="post">
+						<!-- left column -->
+						<div id="left">
+							<ol>
+							{% for building in buildings %}
+								{% if loop.index <= loop.length // 2 %}
+								<li value={{ building.abbr_safe|safe }}><a href="/{{-building.abbr_safe|e-}}">{{ building.full|safe+' ('+building.abbr|safe+')' }}</a></li>
+								{% endif %}
+							{% endfor %}
+							</ol>
+						</div>
+						<!-- right column -->
+						<div id="right">
+							<ol>
+							{% for building in buildings %}
+								{% if loop.index > loop.length // 2 %}
+								<li value={{ building.abbr_safe|safe }}><a href="/{{-building.abbr_safe|e-}}">{{ building.full|safe+' ('+building.abbr|safe+')' }}</a></li>
+								{% endif %}
+							{% endfor %}
+							</ol>
+						</div>
+					</form>
+				</div>
+			</div>
+{% endblock %}

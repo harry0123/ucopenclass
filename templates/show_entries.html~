@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block body %}
+  <ul class=entries>
+  {% for entry in entries %}
+	<li>{{ entry.room }}
+	{{ entry.day|safe }}
+	{{ entry.start|safe }}
+	{{ entry.end|safe }}
+  {% endfor %}
+  </ul>
+{% endblock %}

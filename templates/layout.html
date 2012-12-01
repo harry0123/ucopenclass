@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="description" content="Search engine to find open classrooms at UC Berkeley"/>
+		<title>Open Classrooms @ UC Berkeley</title>
+		<link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='jquery-1.7.2.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui-1.7.3.custom.min.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='time.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='jquery-ui-functions.js') }}"></script>
+	</head>
+	<body onload="startTime()">
+		<div id="wrap">
+			<div id="header">
+				<h1><a id="logo" href="/">Open Classrooms @ UC Berkeley</a></h1>
+			</div>
+			<p>The time right now is <span id="time"></span></p>
+			{% block div %}{% endblock %}
+		</div>
+
+		<div class="footer" id="footer">
+			<p>*PLEASE NOTE THAT THIS DATA DOES NOT TAKE INTO ACCOUNT OF GROUP MEETINGS, OFFICE HOURS, REVIEW SESSIONS, AND DECALS (AT LEAST NOT YET! STILL WORKING ON IT!)</p>
+			<p>**THIS IS NOT A RESERVATION SYSTEM. OPEN ROOMS ARE FIRST COME FIRST SERVE IF UNLOCKED</p>
+            <p>&copy;2012 Harrison Tsai</p>
+		</div>
+	</body>
+</html>
